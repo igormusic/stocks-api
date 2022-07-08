@@ -1,0 +1,18 @@
+# Test your FastAPI endpoints
+
+POST http://127.0.0.1:8000/api/stock-data/bulk-insert
+Accept: application/json
+
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+--WebAppBoundary
+Content-Disposition: form-data; name="data"; filename="dow_jones_index.data"
+Content-Type: text/csv
+< ./dow_jones_index.data
+--WebAppBoundary--
+
+###
+
+GET http://127.0.0.1:8000/api/stock-data/AA
+Accept: application/json
+
+###
